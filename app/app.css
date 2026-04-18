@@ -48,7 +48,7 @@ body {
 }
 
 .app-subtitle {
-  margin-top: 6px;
+  margin-top: 10px;
   color: var(--text-muted);
   font-size: 1rem;
 }
@@ -117,6 +117,70 @@ body {
   color: var(--text-muted);
   font-size: 0.85rem;
   border-top: 1px solid var(--border);
+}
+
+.sub-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.sub-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.sub-item:hover {
+  background: rgba(74, 144, 226, 0.07);
+}
+
+.sub-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sub-icon svg {
+  width: 13px;
+  height: 13px;
+}
+
+.sub-text {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.sub-divider {
+  height: 0.5px;
+  background: var(--border);
+  margin: 0 12px;
+}
+
+.sub-warning {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  background: #fff5f5;
+  border: 0.5px solid #feb2b2;
+}
+
+.sub-warning-text {
+  font-size: 0.8rem;
+  color: #c53030;
+  font-weight: 600;
 }
 
 @media (max-width: 600px) {

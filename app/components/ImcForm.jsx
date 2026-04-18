@@ -8,8 +8,11 @@ const initialState = {
   date: new Date().toISOString().slice(0, 10),
 };
 
-export default function ImcForm({ onAdd }) {
-  const [formData, setFormData] = useState(initialState);
+export default function ImcForm({ onAdd, ultimaAltura }) {
+  const [formData, setFormData] = useState({
+    ...initialState,
+    height: ultimaAltura || "",
+  });
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -78,4 +81,9 @@ export default function ImcForm({ onAdd }) {
 
 ImcForm.propTypes = {
   onAdd: PropTypes.func.isRequired,
+  ultimaAltura: PropTypes.string,
+};
+
+ImcForm.defaultProps = {
+  ultimaAltura: "",
 };
