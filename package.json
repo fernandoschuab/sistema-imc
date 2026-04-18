@@ -1,11 +1,14 @@
 {
   "name": "sistema-imc",
+  "homepage": "https://fernandoschuab.github.io/sistema-imc/",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
-    "start": "react-router-serve ./build/server/index.js"
+    "start": "react-router-serve ./build/server/index.js",
+    "predeploy": "npm run build && cp build/client/index.html build/client/404.html",
+    "deploy": "gh-pages -d build/client"
   },
   "dependencies": {
     "@react-router/node": "7.14.0",
@@ -21,6 +24,7 @@
   },
   "devDependencies": {
     "@react-router/dev": "7.14.0",
+    "gh-pages": "^6.3.0",
     "vite": "^8.0.3"
   }
 }
