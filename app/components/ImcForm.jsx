@@ -23,7 +23,11 @@ export default function ImcForm({ onAdd, ultimaAltura }) {
     e.preventDefault();
     if (!formData.weight || !formData.height) return;
     onAdd(formData);
-    setFormData(initialState);
+    setFormData({
+      weight: "",
+      height: formData.height,
+      date: new Date().toISOString().slice(0, 10),
+    });
   }
 
   const isDisabled = !formData.weight || !formData.height;
