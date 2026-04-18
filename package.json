@@ -7,7 +7,7 @@
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
-    "predeploy": "npm run build && cp build/client/index.html build/client/404.html",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build/client"
   },
   "dependencies": {
