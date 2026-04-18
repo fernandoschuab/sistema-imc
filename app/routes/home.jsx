@@ -55,6 +55,10 @@ export default function Home() {
     }
   }
 
+  const historicoOrdenado = [...historico].sort(
+    (a, b) => new Date(a.date) - new Date(b.date)
+  );
+
   return (
     <div className="app-container">
       <header className="app-header">
@@ -71,7 +75,7 @@ export default function Home() {
           <>
             <section className="chart-section">
               <h2 className="section-title">Histórico (últimos 7 registros)</h2>
-              <Bar historico={historico} />
+              <Bar historico={historicoOrdenado} />
             </section>
 
             <section className="cards-section">
@@ -81,7 +85,7 @@ export default function Home() {
                 </button>
               )}
               <div className="cards-grid">
-                {historico.map((item) => (
+                {historicoOrdenado.map((item) => (
                   <Info
                     key={item.id}
                     id={item.id}
